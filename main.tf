@@ -3,7 +3,7 @@ data "aws_iam_policy_document" "assume-role-policy" {
   version = "2012-10-17"
 
   statement {
-    effect = "Allow"
+    effect  = "Allow"
     actions = ["sts:AssumeRole"]
 
     principals {
