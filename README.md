@@ -1,4 +1,4 @@
-# modernisation-platform-terraform-cross-account-account
+# modernisation-platform-terraform-cross-account-access
 
 A simple Terraform module to configure an IAM role that is assumable from another account.
 
