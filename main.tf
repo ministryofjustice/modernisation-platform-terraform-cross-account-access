@@ -8,7 +8,9 @@ data "aws_iam_policy_document" "assume-role-policy" {
 
     principals {
       type        = "AWS"
-      identifiers = ["arn:aws:iam::${var.account_id}:root"]
+      identifiers = flatten([
+        "arn:aws:iam::${var.account_id}:root",
+        var.additional_trust_roles])
     }
   }
 }
