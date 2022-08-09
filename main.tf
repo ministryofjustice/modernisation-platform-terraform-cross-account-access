@@ -7,10 +7,10 @@ data "aws_iam_policy_document" "assume-role-policy" {
     actions = ["sts:AssumeRole"]
 
     principals {
-      type        = "AWS"
+      type = "AWS"
       identifiers = flatten([
         "arn:aws:iam::${var.account_id}:root",
-        var.additional_trust_roles])
+      var.additional_trust_roles])
     }
   }
 }
