@@ -3,6 +3,11 @@ variable "account_id" {
   description = "Account ID to give access to"
 }
 
+variable "additional_trust_roles" {
+  description = "ARN of other roles to be passed as principals for sts:AssumeRole"
+  default     = ""
+}
+
 variable "role_name" {
   type        = string
   description = "Name of assumable role"
