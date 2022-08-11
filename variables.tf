@@ -5,7 +5,7 @@ variable "account_id" {
 
 variable "additional_trust_roles" {
   description = "ARN of other roles to be passed as principals for sts:AssumeRole"
-  default     = null
+  default     = ""
 }
 
 variable "role_name" {
