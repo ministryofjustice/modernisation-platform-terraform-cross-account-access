@@ -13,7 +13,7 @@ data "aws_iam_policy_document" "assume-role-policy" {
   }
 
   dynamic "statement" {
-    for_each = var.additional_trust_roles
+    for_each = length(var.additional_trust_roles) > 0 ? var.additional_trust_roles : []
     content {
       effect  = "Allow"
       actions = ["sts:AssumeRole"]
