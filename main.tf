@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "assume-role-policy" {
       type = "AWS"
       identifiers = join(",",
         compact(flatten([
-        "arn:aws:iam::${var.account_id}:root",
+          "arn:aws:iam::${var.account_id}:root",
         var.additional_trust_roles]))
       )
     }
