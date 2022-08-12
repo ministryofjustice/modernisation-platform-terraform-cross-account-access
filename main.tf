@@ -7,8 +7,8 @@ data "aws_iam_policy_document" "assume-role-policy" {
     actions = ["sts:AssumeRole"]
 
     principals {
-      type = "AWS"
-      identifiers = ["arn:aws:iam::${var.account_id}:root",]
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${var.account_id}:root", ]
     }
   }
 
