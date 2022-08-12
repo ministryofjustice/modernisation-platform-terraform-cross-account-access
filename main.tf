@@ -8,9 +8,11 @@ data "aws_iam_policy_document" "assume-role-policy" {
 
     principals {
       type = "AWS"
-      identifiers = compact(flatten([
-        "arn:aws:iam::${var.account_id}:root",
-      var.additional_trust_roles]))
+      identifiers = join(",",
+        compact(flatten([
+          "arn:aws:iam::${var.account_id}:root",
+        var.additional_trust_roles]))
+      )
     }
   }
 }
