@@ -7,12 +7,21 @@ data "aws_iam_policy_document" "assume-role-policy" {
     actions = ["sts:AssumeRole"]
 
     principals {
-      type = "AWS"
-      identifiers = join(",",
-        compact(flatten([
-          "arn:aws:iam::${var.account_id}:root",
-        var.additional_trust_roles]))
-      )
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${var.account_id}:root", ]
+    }
+  }
+
+  dynamic "statement" {
+    for_each = length(var.additional_trust_roles) > 0 ? var.additional_trust_roles : []
+    content {
+      effect  = "Allow"
+      actions = ["sts:AssumeRole"]
+
+      principals {
+        type        = "AWS"
+        identifiers = [statement.value]
+      }
     }
   }
 }
