@@ -16,14 +16,17 @@ module "cross-account-access" {
 ```
 
 ## Inputs
+
 | Name       | Description                  | Type   | Default                                  | Required |
-|------------|------------------------------|--------|------------------------------------------|----------|
+| ---------- | ---------------------------- | ------ | ---------------------------------------- | -------- |
 | account_id | Account ID to give access to | string |                                          | yes      |
 | policy_arn | Policy ARN to attach to role | string | `arn:aws:iam::aws:policy/ReadOnlyAccess` | no       |
 | role_name  | Role name                    | string |                                          | yes      |
 
 ## Outputs
+
 None.
 
 ## Looking for issues?
+
 If you're looking to raise an issue with this module, please create a new issue in the [Modernisation Platform repository](https://github.com/ministryofjustice/modernisation-platform/issues).
