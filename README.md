@@ -29,7 +29,7 @@ module "cross-account-access" {
 
 None.
 
-<!-- BEGIN_TF_DOCS -->
+<!-- END_TF_DOCS -->
 
 ## Looking for issues?
 
