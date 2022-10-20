@@ -6,11 +6,13 @@ variable "account_id" {
 variable "additional_trust_roles" {
   description = "ARN of other roles to be passed as principals for sts:AssumeRole"
   default     = []
+  type        = list(string)
 }
 
 variable "additional_trust_statements" {
   description = "Json attributes of additional iam policy documents to add to the trust policy"
   default     = []
+  type        = list(string)
 }
 
 variable "role_name" {
