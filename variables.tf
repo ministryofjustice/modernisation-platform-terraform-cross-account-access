@@ -8,6 +8,11 @@ variable "additional_trust_roles" {
   default     = []
 }
 
+variable "additional_trust_statements" {
+  description = "Json attributes of additional iam policy documents to add to the trust policy"
+  default     = []
+}
+
 variable "role_name" {
   type        = string
   description = "Name of assumable role"
