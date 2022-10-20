@@ -14,7 +14,9 @@ module "cross-account-access" {
   role_name  = "CrossAccountAccess"
 }
 ```
+
 <!-- BEGIN_TF_DOCS -->
+
 ## Inputs
 
 | Name       | Description                  | Type   | Default                                  | Required |
@@ -26,6 +28,7 @@ module "cross-account-access" {
 ## Outputs
 
 None.
+
 <!-- BEGIN_TF_DOCS -->
 
 ## Looking for issues?
