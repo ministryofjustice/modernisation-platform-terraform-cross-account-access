@@ -16,19 +16,45 @@ module "cross-account-access" {
 ```
 
 <!-- BEGIN_TF_DOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.47.0 |
+
+## Providers
+
+| Name | Version |
+|------|---------|
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.47.0 |
+
+## Modules
+
+No modules.
+
+## Resources
+
+| Name | Type |
+|------|------|
+| [aws_iam_role.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
+| [aws_iam_role_policy_attachment.default](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_iam_policy_document.assume-role-policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
+| [aws_iam_policy_document.combined-assume-role-policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
 
-| Name       | Description                  | Type   | Default                                  | Required |
-| ---------- | ---------------------------- | ------ | ---------------------------------------- | -------- |
-| account_id | Account ID to give access to | string |                                          | yes      |
-| policy_arn | Policy ARN to attach to role | string | `arn:aws:iam::aws:policy/ReadOnlyAccess` | no       |
-| role_name  | Role name                    | string |                                          | yes      |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_account_id"></a> [account\_id](#input\_account\_id) | Account ID to give access to | `string` | n/a | yes |
+| <a name="input_additional_trust_roles"></a> [additional\_trust\_roles](#input\_additional\_trust\_roles) | ARN of other roles to be passed as principals for sts:AssumeRole | `list(string)` | `[]` | no |
+| <a name="input_additional_trust_statements"></a> [additional\_trust\_statements](#input\_additional\_trust\_statements) | Json attributes of additional iam policy documents to add to the trust policy | `list(string)` | `[]` | no |
+| <a name="input_policy_arn"></a> [policy\_arn](#input\_policy\_arn) | Policy ARN for the assumable role. Defaults to arn:aws:iam::aws:policy/ReadOnlyAccess | `string` | `"arn:aws:iam::aws:policy/ReadOnlyAccess"` | no |
+| <a name="input_role_name"></a> [role\_name](#input\_role\_name) | Name of assumable role | `string` | n/a | yes |
 
 ## Outputs
 
-None.
-
+No outputs.
 <!-- END_TF_DOCS -->
 
 ## Looking for issues?
