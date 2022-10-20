@@ -27,7 +27,7 @@ data "aws_iam_policy_document" "assume-role-policy" {
 }
 
 data "aws_iam_policy_document" "combined-assume-role-policy" {
-  source_policy_documents = concat([data.aws_iam_policy_document.assume_role_policy.json], var.additional_trust_statements)
+  source_policy_documents = concat([data.aws_iam_policy_document.assume-role-policy.json], var.additional_trust_statements)
 }
 
 # IAM role to be assumed
