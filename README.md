@@ -53,7 +53,9 @@ No modules.
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_role_arn"></a> [role\_arn](#output\_role\_arn) | n/a |
 <!-- END_TF_DOCS -->
 
 ## Looking for issues?
