@@ -1,6 +1,6 @@
 module github.com/ministryofjustice/modernisation-platform-terraform-cross-account-access
 
-go 1.22.3
+go 1.22
 
 require (
 	github.com/gruntwork-io/terratest v0.46.14
