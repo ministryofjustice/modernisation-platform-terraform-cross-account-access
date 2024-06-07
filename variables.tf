@@ -23,5 +23,5 @@ variable "role_name" {
 variable "policy_arns" {
   type        = list(string)
   description = "One of more policy ARNs for the assumable role. Defaults to arn:aws:iam::aws:policy/ReadOnlyAccess"
-  default     = [ "arn:aws:iam::aws:policy/ReadOnlyAccess" ]
+  default     = ["arn:aws:iam::aws:policy/ReadOnlyAccess"]
 }
