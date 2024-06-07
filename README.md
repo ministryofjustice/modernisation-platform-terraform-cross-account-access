@@ -9,7 +9,7 @@ A simple Terraform module to configure an IAM role that is assumable from anothe
 module "cross-account-access" {
   source     = "github.com/ministryofjustice/modernisation-platform-terraform-cross-account-access"
   account_id = "123456789"
-  policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+  policy_arns = [ "arn:aws:iam::aws:policy/ReadOnlyAccess" ]
   role_name  = "CrossAccountAccess"
 }
 ```

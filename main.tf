@@ -36,8 +36,9 @@ resource "aws_iam_role" "default" {
   assume_role_policy = data.aws_iam_policy_document.combined-assume-role-policy.json
 }
 
-# IAM role attached policy
+# IAM role attached policies
 resource "aws_iam_role_policy_attachment" "default" {
+  for_each   = toset(var.policy_arns)
   role       = aws_iam_role.default.id
-  policy_arn = var.policy_arn
+  policy_arn = each.value
 }
