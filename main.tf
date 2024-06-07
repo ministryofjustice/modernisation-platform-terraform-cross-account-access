@@ -40,5 +40,5 @@ resource "aws_iam_role" "default" {
 resource "aws_iam_role_policy_attachment" "default" {
   for_each   = toset(var.policy_arns)
   role       = aws_iam_role.default.id
-  policy_arn = each.value
+  policy_arn = each.key
 }
