@@ -9,7 +9,7 @@ A simple Terraform module to configure an IAM role that is assumable from anothe
 module "cross-account-access" {
   source     = "github.com/ministryofjustice/modernisation-platform-terraform-cross-account-access"
   account_id = "123456789"
-  policy_arn = "arn:aws:iam::aws:policy/ReadOnlyAccess"
+  policy_arns = [ "arn:aws:iam::aws:policy/ReadOnlyAccess" ]
   role_name  = "CrossAccountAccess"
 }
 ```
@@ -48,7 +48,7 @@ No modules.
 | <a name="input_account_id"></a> [account\_id](#input\_account\_id) | Account ID to give access to | `string` | n/a | yes |
 | <a name="input_additional_trust_roles"></a> [additional\_trust\_roles](#input\_additional\_trust\_roles) | ARN of other roles to be passed as principals for sts:AssumeRole | `list(string)` | `[]` | no |
 | <a name="input_additional_trust_statements"></a> [additional\_trust\_statements](#input\_additional\_trust\_statements) | Json attributes of additional iam policy documents to add to the trust policy | `list(string)` | `[]` | no |
-| <a name="input_policy_arn"></a> [policy\_arn](#input\_policy\_arn) | Policy ARN for the assumable role. Defaults to arn:aws:iam::aws:policy/ReadOnlyAccess | `string` | `"arn:aws:iam::aws:policy/ReadOnlyAccess"` | no |
+| <a name="input_policy_arns"></a> [policy\_arns](#input\_policy\_arns) | One of more policy ARNs for the assumable role. Defaults to arn:aws:iam::aws:policy/ReadOnlyAccess | `list(string)` | <pre>[<br>  "arn:aws:iam::aws:policy/ReadOnlyAccess"<br>]</pre> | no |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | Name of assumable role | `string` | n/a | yes |
 
 ## Outputs
