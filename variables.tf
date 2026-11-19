@@ -25,3 +25,9 @@ variable "policy_arn" {
   description = "Policy ARN for the assumable role. Defaults to arn:aws:iam::aws:policy/ReadOnlyAccess"
   default     = "arn:aws:iam::aws:policy/ReadOnlyAccess"
 }
+
+variable "restricted_role_name" {
+  type        = string
+  description = "The specific role name to restrict to (if empty, the account root is used)"
+  default     = ""
+}

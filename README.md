@@ -49,6 +49,7 @@ No modules.
 | <a name="input_additional_trust_roles"></a> [additional\_trust\_roles](#input\_additional\_trust\_roles) | ARN of other roles to be passed as principals for sts:AssumeRole | `list(string)` | `[]` | no |
 | <a name="input_additional_trust_statements"></a> [additional\_trust\_statements](#input\_additional\_trust\_statements) | Json attributes of additional iam policy documents to add to the trust policy | `list(string)` | `[]` | no |
 | <a name="input_policy_arn"></a> [policy\_arn](#input\_policy\_arn) | Policy ARN for the assumable role. Defaults to arn:aws:iam::aws:policy/ReadOnlyAccess | `string` | `"arn:aws:iam::aws:policy/ReadOnlyAccess"` | no |
+| <a name="input_restricted_role_name"></a> [restricted\_role\_name](#input\_restricted\_role\_name) | The specific role name to restrict to (if empty, the account root is used) | `string` | `""` | no |
 | <a name="input_role_name"></a> [role\_name](#input\_role\_name) | Name of assumable role | `string` | n/a | yes |
 
 ## Outputs
