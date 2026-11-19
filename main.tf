@@ -10,7 +10,7 @@ data "aws_iam_policy_document" "assume-role-policy" {
       type = "AWS"
       identifiers = var.restricted_role_name != "" ? [
         "arn:aws:iam::${var.account_id}:role/${var.restricted_role_name}"
-      ] : [
+        ] : [
         "arn:aws:iam::${var.account_id}:root"
       ]
     }
